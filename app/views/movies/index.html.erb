@@ -1,0 +1,19 @@
+<h1>Movies List</h1>
+
+<table border="2">
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th></th>
+</tr>
+<% @movie.each do |reg| %>
+<tr>
+<td><%= reg.name %></td>
+<td><%= reg.description %></td>
+<td><%= link_to "show",  movie_path(reg) %>
+<%= link_to "edit",  edit_movie_path(reg) %>
+<%= link_to "delete", movie_path(reg) , :method=> "delete", data: {conform: "Are you sure?"} %></td>
+</tr>
+<% end %>    
+</table>
+

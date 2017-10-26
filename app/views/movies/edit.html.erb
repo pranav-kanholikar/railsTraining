@@ -1,0 +1,8 @@
+<h1>Make changes</h1>
+
+<%= form_for @movie, url: { action: "update" } do |f| %>
+  <p>Movie Nam: <%= f.text_field :name %></p>
+  <p>Description: <%= f.text_field :description %></p>
+  <%= f.submit %>
+<% end %>
+

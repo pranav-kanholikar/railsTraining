@@ -1,0 +1,27 @@
+<h1>Showing movie</h1>
+
+Movie name: <%= @movie.name %><br/>
+Description: <%= @movie.description %><br/>
+
+
+<p><%= link_to "back", movies_path %></p><br></br>
+
+<h2>Comments</h2>
+<% @movie.comments.each do |comment| %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= comment.commenter %>
+  </p>
+ 
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+<% end %>
+<p><%= link_to "Edit", edit_movie_comment_path(@movie) %></p>
+<p><%= link_to "Destroy_comment", movie_comment_path(@movie), :method=> "delete" %></p>
+
+
+
+
+<%= link_to "add Comments" , new_movie_comment_path(@movie) %>

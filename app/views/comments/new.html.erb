@@ -1,0 +1,8 @@
+<h1>Write Comments</h1>
+
+<%= form_for @comment, url: { action: "create" } do |f| %>
+  <p>Commenter: <%= f.text_field :commenter %></p>
+  <p>Body: <%= f.text_field :body %></p>
+  <%= f.submit 'Add_Comments'%>
+<% end %>
+
