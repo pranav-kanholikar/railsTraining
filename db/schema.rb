@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171025055111) do
+ActiveRecord::Schema.define(version: 20171027073954) do
+
+  create_table "booked", force: :cascade do |t|
+    t.string "f_name", null: false
+    t.string "l_name"
+    t.date "date"
+    t.time "time"
+    t.integer "no_of_seats", limit: 5
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cinimaxes", force: :cascade do |t|
+    t.string "name"
+    t.string "area"
+    t.text "street"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.string "commenter"

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  f_name: MyString
+  l_name: MyString
+  date: 2017-10-27
+  time: 2017-10-27 10:51:41
+  no_of_seats: 1
+
+two:
+  f_name: MyString
+  l_name: MyString
+  date: 2017-10-27
+  time: 2017-10-27 10:51:41
+  no_of_seats: 1

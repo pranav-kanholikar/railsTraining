@@ -1,0 +1,2 @@
+class Cinimax < ApplicationRecord
+end
