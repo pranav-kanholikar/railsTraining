@@ -1,0 +1,10 @@
+<% if object && object.errors.size > 0 %>
+<div>
+    <h2><%= puralize(object.errors.size, "errror") %> prohibited this record from saved</h2>
+    <p>There were problem with the following fields:</p>
+    <ul>
+        <% object.errors.full_messages.ecach do |msg| %>
+            <li><%= msg %></li>
+<% end %>
+</ul>
+</div>

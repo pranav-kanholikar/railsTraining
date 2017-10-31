@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-
+  layout "coustome"
   http_basic_authenticate_with name: "pranav", password: "secret", except: [:index, :show]
 
   def index
@@ -13,6 +13,7 @@ class MoviesController < ApplicationController
   def create
     @movie=Movie.new(movie_params)
     if @movie.save
+      flash[:notice]= "Movie created sucessfully!!"
       redirect_to movies_path
     else
       render 'new'
@@ -22,6 +23,7 @@ class MoviesController < ApplicationController
   def update
     @movie=Movie.find params[:id]
       if @movie.update_attributes(movie_params)
+        flash[:notice]= "Movie updated sucessfully!!"
         redirect_to movies_path
       else
         render 'edit'

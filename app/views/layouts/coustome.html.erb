@@ -1,0 +1,27 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <title>Cinimas Application | <%=  @page_title || "coustome" %></title>
+    <%= stylesheet_link_tag('application', :media => 'all') %>
+  </head>
+
+  <body>
+  <header>
+    <h1>Movies Application</h1>
+    <hr/>
+    </br>
+  </header>
+  <br></br>
+  <% if !flash[:notice].blank? %>
+    <div class="c1">
+        <%= flash[:notice] %>
+    </div>
+<% end %>
+<br/>
+    <%= yield %>
+    <br></br>
+<footer>
+    <p id="copyright">&copy; navtech@technology.com / Pranav kanholikar</p>
+</footer>
+  </body>
+</html>

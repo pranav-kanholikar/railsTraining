@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+
+    layout "coustome"
+
   def index
   end
 
