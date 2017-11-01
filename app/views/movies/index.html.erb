@@ -3,6 +3,8 @@
 
 <h1>Movies List</h1>
 
+<p><%= link_to "logout", acess_logout_path(:controller => 'acess') %></p><br></br>
+
 <table border="2">
 <tr>
 <th>Name</th>
@@ -13,10 +15,12 @@
 <tr>
 <td><%= reg.name %></td>
 <td><%= reg.description %></td>
-<td><%= link_to "show",  movie_path(reg) %>
+<td>
+<%= link_to "show",  movie_path(reg) %>
 <%= link_to "edit",  edit_movie_path(reg) %>
 <%= link_to "delete", movie_path(reg) , :method=> "delete", data: {conform: "Are you sure?"} %></td>
 </tr>
+
 <% end %>    
 </table>
 

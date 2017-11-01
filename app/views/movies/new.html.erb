@@ -1,5 +1,6 @@
 <h1>New Movies</h1>
 
+
 <%= form_for @movie, url: { action: "create" } do |f| %>
   <div class="c1">
     <% if @movie.errors.present? %>
@@ -11,3 +12,7 @@
     <%= render(:partial => "form", :locals => {:f => f}) %>
   <%= f.submit %>
 <% end %>
+<br></br>
+
+
+<p><%= link_to "back", acess_index_path(:controller => 'acess') %></p>

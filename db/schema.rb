@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171025055111) do
+ActiveRecord::Schema.define(version: 20171101134003) do
+
+  create_table "booked", force: :cascade do |t|
+    t.string "f_name", null: false
+    t.string "l_name"
+    t.date "date"
+    t.time "time"
+    t.integer "no_of_seats", limit: 5
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cinimaxes", force: :cascade do |t|
+    t.string "name"
+    t.string "area"
+    t.text "street"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.string "commenter"
@@ -20,11 +38,32 @@ ActiveRecord::Schema.define(version: 20171025055111) do
     t.integer "movie_id"
   end
 
+  create_table "logins", force: :cascade do |t|
+    t.string "uname"
+    t.string "lname"
+    t.string "email"
+    t.string "email_confirmation"
+    t.string "password"
+    t.string "confirm_password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "movies", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
+  end
+
+  create_table "screens", force: :cascade do |t|
+    t.integer "height"
+    t.integer "width"
+    t.integer "capacity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "movie_id"
   end
 
 end

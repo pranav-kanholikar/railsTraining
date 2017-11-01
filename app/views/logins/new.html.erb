@@ -1,0 +1,32 @@
+<h1>Login Page</h1>
+
+<%= form_for @login, url: { action: "create" } do |f| %>
+<table>
+<tr>
+<td>First Name:</td> 
+<td><%= f.text_field :uname %></td>
+</tr>
+<tr>
+<td>Last Name:</td> 
+<td><%= f.text_field :lname %></td>
+</tr>
+<tr>
+<td>Email:</td> 
+<td><%= f.text_field :email %></td>
+</tr>
+<tr>
+<td>Confirm Email:</td> 
+<td><%= f.text_field :email_confirmation %></td>
+</tr>
+<tr>
+<td>Password:</td> 
+<td><%= f.text_field :lname %></td>
+</tr>
+<tr>
+<td>Confirm Password:</td> 
+<td><%= f.text_field :confirm_password %></td>
+</tr>
+</table>
+<br>
+<p><%= f.submit %></p>
+<% end %>
