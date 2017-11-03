@@ -7,7 +7,7 @@ class AcessController < ApplicationController
 
   def attempt
     if params[:username].present? && params[:password].present?
-      found_user =
+    end
   end
 
   def logout

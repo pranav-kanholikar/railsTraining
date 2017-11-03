@@ -1,18 +1,16 @@
 Rails.application.routes.draw do
 
-  get 'logins/index'
+  resources :logins do
+    collection do
+      get 'get_login' ,as: "logining"
+      post 'user'
+    end
 
-  get 'logins/new'
+    member do
+      post 'sign_in' ,as: "singing_in"
+    end
 
-  get 'logins/create'
-
-  get 'logins/update'
-
-  get 'logins/destroy'
-
-  get 'logins/show'
-
-  get 'logins/edit'
+  end
 
   get 'admin', :to=> "acess#index"
 
@@ -29,7 +27,7 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  root 'movies#index'
+  root 'acess#index'
   
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

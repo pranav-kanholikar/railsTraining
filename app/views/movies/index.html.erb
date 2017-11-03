@@ -2,7 +2,11 @@
 <% @page_title = "movies" %>
 
 <h1>Movies List</h1>
-
+<br></br>
+<div class="btn-group">
+<%= link_to "New Movie", new_movie_path %>
+<div>
+</br>
 <p><%= link_to "logout", acess_logout_path(:controller => 'acess') %></p><br></br>
 
 <table border="2">

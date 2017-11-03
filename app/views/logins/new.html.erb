@@ -1,7 +1,18 @@
 <h1>Login Page</h1>
 
+
+<div class="col-md-6 col-md-offset-3">
 <%= form_for @login, url: { action: "create" } do |f| %>
-<table>
+
+<div class="c1">
+    <% if @login.errors.present? %>
+    <% @login.errors.full_messages.each do |errors| %>
+      <%= errors %><br/>
+      <% end %>
+    <% end %>
+  </div>
+
+<table class="table table-striped">
 <tr>
 <td>First Name:</td> 
 <td><%= f.text_field :uname %></td>
@@ -12,21 +23,22 @@
 </tr>
 <tr>
 <td>Email:</td> 
-<td><%= f.text_field :email %></td>
+<td><%= f.email_field :email %></td>
 </tr>
 <tr>
 <td>Confirm Email:</td> 
-<td><%= f.text_field :email_confirmation %></td>
+<td><%= f.email_field :email_confirmation %></td>
 </tr>
 <tr>
 <td>Password:</td> 
-<td><%= f.text_field :lname %></td>
+<td><%= f.password_field :password %></td>
 </tr>
 <tr>
 <td>Confirm Password:</td> 
-<td><%= f.text_field :confirm_password %></td>
+<td><%= f.password_field :confirm_password %></td>
 </tr>
 </table>
 <br>
-<p><%= f.submit %></p>
+<p><%= f.submit "Create my account"%></p>
 <% end %>
+</div>

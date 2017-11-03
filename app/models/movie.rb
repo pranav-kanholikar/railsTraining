@@ -1,10 +1,10 @@
 class Movie < ApplicationRecord
 
-   
+   has_secure_password
 
     has_many :comments 
     FORBIDDEN_MOVIES = ['cow boys', 'singham', 'world war Z']
-    validates :name, uniqueness: true, numericality: { only_integer: false }, presence: true
+    validates :name, uniqueness: true, presence: true
     validates :description, length: { maximum: 10,
     too_long: "%{count} characters is the maximum allowed" }
 

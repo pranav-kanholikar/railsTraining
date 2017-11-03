@@ -1,4 +1,8 @@
 class MoviesController < ApplicationController
+
+
+  
+
   layout "coustome"
   http_basic_authenticate_with name: "pranav", password: "secret", except: [:index, :show]
 
@@ -48,3 +52,4 @@ private
     params.require(:movie).permit!
   end
 end
+
